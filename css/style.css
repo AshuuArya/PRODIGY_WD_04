@@ -85,9 +85,26 @@ body {
 
 .hero-title {
     font-family: var(--font-secondary);
-    font-size: clamp(4rem, 8vw, 10rem);
+    font-size: clamp(4rem, 8vw, 14rem);
     line-height: 1.1;
     color: #fff;
+}
+
+/* Add this to your style.css file */
+
+.hero-title .line {
+    display: block; /* Ensures each span is on its own line */
+}
+
+#Designation-text {
+    /* Adjusting the font size to be smaller than the main title */
+    font-size: 0.5em; /* 'em' makes it relative to the parent's font size */
+    
+    /* Using the secondary text color for a softer, hierarchical look */
+    color: #acb4cb;
+    
+    /* Optional: A slightly thinner font weight can also enhance hierarchy */
+    font-weight: 400; 
 }
 
 .hero-title .line {
