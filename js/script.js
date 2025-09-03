@@ -2,26 +2,49 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const header = document.querySelector('.main-header');
     const scrollToTopBtn = document.querySelector('.scroll-to-top');
+    const cursor = document.querySelector('.cursor');
 
-    // --- Header & Scroll-to-Top Button Visibility on Scroll ---
-    window.addEventListener('scroll', () => {
-        // Add a class to the header when user scrolls down
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled-header');
-        } else {
-            header.classList.remove('scrolled-header');
-        }
-
-        // Show or hide the scroll-to-top button
-        if (window.scrollY > 400) {
-            scrollToTopBtn.classList.add('active');
-        } else {
-            scrollToTopBtn.classList.remove('active');
-        }
+    // --- Custom Cursor Logic ---
+    window.addEventListener('mousemove', e => {
+        gsap.to(cursor, {
+            x: e.clientX,
+            y: e.clientY,
+            duration: 0.08, // Further decreased duration for an even faster response
+            ease: 'power2.out'
+        });
     });
 
-    // --- Magnetic Buttons Effect (requires GSAP) ---
-    // This gives a premium feel to interactive elements like social links
+    document.querySelectorAll('a, .project-card, [data-magnetic]').forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+
+    // --- Header & Scroll-to-Top Button Visibility ---
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled-header', window.scrollY > 50);
+        scrollToTopBtn.classList.toggle('active', window.scrollY > 400);
+    });
+
+    // --- Dynamic Hero Text Animation ---
+    function animateHeroText() {
+        const titleLines = [
+            { el: document.querySelector('.hero-title .line:first-child'), text: "Ashutosh Arya" },
+            { el: document.querySelector('#Designation-text'), text: "Front-End Developer" }
+        ];
+
+        titleLines.forEach(line => {
+            if (line.el) {
+                line.el.innerHTML = line.text.split('').map(char => `<span class="char">${char === ' ' ? '&nbsp;' : char}</span>`).join('');
+                gsap.fromTo(line.el.querySelectorAll('.char'),
+                    { y: '115%' },
+                    { y: '0%', duration: 1, ease: 'power3.out', stagger: 0.04, delay: 0.5 }
+                );
+            }
+        });
+    }
+    animateHeroText();
+
+    // --- Magnetic Buttons Effect ---
     document.querySelectorAll('[data-magnetic]').forEach(el => {
         el.addEventListener('mousemove', function(e) {
             const position = this.getBoundingClientRect();
@@ -34,33 +57,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // --- Smooth Scrolling ---
-    $('a[href*="#"]').on('click', function (e) {
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $(this.hash).offset().top
-        }, 800, 'swing');
-    });
-
     // --- ScrollReveal Animations ---
-    // This creates elegant fade-in-on-scroll effects for sections
     const sr = ScrollReveal({
-        origin: 'bottom',
-        distance: '60px',
-        duration: 1000,
-        delay: 100,
-        easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
-        reset: false // Animations only happen once
+        origin: 'bottom', distance: '60px', duration: 1000,
+        delay: 100, easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)', reset: false
     });
     
-    // Animate elements in sequence as they appear
-    sr.reveal('.hero-title .line', { origin: 'top', duration: 1200, interval: 200 });
-    sr.reveal('.hero-subtitle', { delay: 500 });
+    sr.reveal('.hero-subtitle, .btn-primary', { delay: 800 });
     sr.reveal('.section-title');
     sr.reveal('.about-text p', { delay: 200 });
     sr.reveal('.skills-list', { delay: 400 });
+    sr.reveal('.value-card', { interval: 150 });
+    sr.reveal('.timeline-item', { interval: 150 });
     sr.reveal('.project-card', { interval: 150 });
     sr.reveal('.contact-subtitle');
     sr.reveal('.contact-email', { delay: 200 });
     sr.reveal('.footer-content > div', { interval: 100 });
 });
+
