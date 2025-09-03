@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The portfolio of Ashutosh Arya, a Full-Stack Developer creating secure, elegant, and high-performance digital solutions.">
+    <meta name="description" content="The portfolio of Ashutosh Arya, a Front-End Developer creating secure, elegant, and high-performance digital solutions.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/style.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -18,6 +17,8 @@
     <title>Ashutosh Arya - Front-End Developer</title>
 </head>
 <body>
+
+<div class="cursor"></div>
 
 <div id="star-background">
     <div class="stars-small"></div>
@@ -29,9 +30,10 @@
     <a href="#home" class="logo" aria-label="Homepage">A.A</a>
     <nav class="main-nav">
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about" data-magnetic>About</a></li>
+            <li><a href="#experience" data-magnetic>Experience</a></li>
+            <li><a href="#work" data-magnetic>Work</a></li>
+            <li><a href="#contact" data-magnetic>Contact</a></li>
         </ul>
     </nav>
 </header>
@@ -40,11 +42,14 @@
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1 class="hero-title" aria-label="Ashutosh Arya, Full-Stack Developer">
-                <span class="line">Ashutosh Arya</span>
-                <span class="line" id="Designation-text">Front-End Developer</span>
+            <h1 class="hero-title" aria-label="Ashutosh Arya, Front-End Developer">
+                <span class="line"></span>
+                <span class="line" id="Designation-text"></span>
             </h1>
-            <p class="hero-subtitle">I design and build secure, elegant, and high-performance web solutions, transforming complex problems into beautiful, intuitive applications.</p>
+            <p class="hero-subtitle">I build high-performance, visually stunning web interfaces that captivate users and solve complex problems, turning your vision into a digital reality.</p>
+            <a href="Resume_ashutosharya.pdf" download="Ashutosh_Arya_Resume.pdf" class="btn-primary" data-magnetic>
+                Download My Resume <i class="fas fa-download"></i>
+            </a>
         </div>
         <a href="#about" class="scroll-indicator" aria-label="Scroll to about section">
             <span class="scroll-text">Scroll</span>
@@ -55,19 +60,69 @@
     <section class="about" id="about">
         <div class="about-wrapper">
             <div class="about-text">
-                <h2 class="section-title">A Fusion of Code and Creativity.</h2>
-                <p>I am a developer driven by a dual passion: crafting robust, user-centric applications and fortifying them with secure, resilient architecture. My expertise with the MERN stack is complemented by a deep-seated interest in cryptography, a journey that led to the creation of projects like FileFortress.</p>
+                <h2 class="section-title">Beyond the Code.</h2>
+                <p>For me, development is not just about writing clean code; it's about architecting experiences. I thrive on the intersection of aesthetic design and robust functionality, ensuring every project is not only beautiful but also intuitive, responsive, and optimized for performance. My passion lies in transforming a client's idea into a tangible, high-impact digital product that users love.</p>
             </div>
             <div class="skills-list">
-                <h3 class="skills-title">Core Competencies</h3>
+                <h3 class="skills-title">My Toolkit</h3>
                 <ul>
-                    <li>JavaScript (ES6+)</li>
-                    <li>React & Node.js</li>
-                    <li>MongoDB & SQL</li>
-                    <li>Python</li>
-                    <li>Secure System Design</li>
-                    <li>Data Structures & Algorithms</li>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>React.js</li>
+                    <li>Python, C++, Java</li>
+                    <li>UI/UX & Responsive Design</li>
+                    <li>Performance Optimization</li>
+                    <li>Git & GitHub</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-me" id="why-me">
+        <h2 class="section-title">Why Partner With Me?</h2>
+        <div class="value-grid">
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Performance-Obsessed</h3>
+                <p>I build for speed. By optimizing assets and streamlining code, I ensure your site is not just fast, but delivers a seamless user experience, proven by a 30% load time reduction in past projects.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-palette"></i></div>
+                <h3>Design-Driven Development</h3>
+                <p>With a keen eye for UI/UX and experience with Figma, I translate design mockups into pixel-perfect, interactive realities that are both beautiful and functional.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                <h3>A Collaborative Partner</h3>
+                <p>I believe in clear communication and a transparent process. I see myself as an extension of your team, dedicated to bringing your vision to life and achieving your business goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience" id="experience">
+        <h2 class="section-title">My Journey.</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">June 2024 - Aug 2024</div>
+                <div class="timeline-content">
+                    <h3>Web Development Intern</h3>
+                    <p class="company">Prodigy InfoTech</p>
+                    <ul>
+                        <li>Designed and developed responsive landing pages and interactive browser-based applications.</li>
+                        <li>Created engaging animations and dynamic background effects to enhance user experience.</li>
+                        <li>Optimized page performance, reducing average load times by 30%.</li>
+                    </ul>
+                </div>
+            </div>
+             <div class="timeline-item">
+                <div class="timeline-date">2022 - 2026</div>
+                <div class="timeline-content">
+                    <h3>B.Tech in Information Technology</h3>
+                    <p class="company">ABES Engineering College</p>
+                     <ul>
+                        <li>Building a strong foundation in computer science, data structures, and algorithms.</li>
+                        <li>Actively participating in coding communities and personal projects to hone my skills.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -78,23 +133,27 @@
 
             <div class="project-card">
                 <div class="project-image-wrapper">
+                    <!-- Updated image URL -->
                     <div class="project-image" style="background-image: url('images/project-file-encryption.png');"></div>
                 </div>
                 <div class="project-info">
+                    <span class="project-type">Security Tool</span>
                     <h3 class="project-title">FileFortress</h3>
-                    <p class="project-description">Python-based RSA & AES Encryption Tool</p>
+                    <p class="project-description">A secure file encryption web app using a hybrid RSA + AES algorithm.</p>
                     <div class="project-links">
-                        <a href="https://ashuuarya.github.io/filencrypter-WEB" target="https://ashuuarya.github.io/filencrypter-WEB/">View Live</a>
-                        <a href="https://github.com/AshuuArya/filencrypter-WEB" target="https://github.com/AshuuArya/filencrypter-WEB">View Code</a>
+                        <a href="https://ashuuarya.github.io/filencrypter-WEB/" target="_blank">View Live</a>
+                        <a href="https://github.com/AshuuArya/filencrypter-WEB" target="_blank">View Code</a>
                     </div>
                 </div>
             </div>
-
+            
             <div class="project-card">
                 <div class="project-image-wrapper">
+                     <!-- Updated image URL -->
                     <div class="project-image" style="background-image: url('images/project-blockchain-voting.png');"></div>
                 </div>
                 <div class="project-info">
+                    <span class="project-type">Blockchain DApp</span>
                     <h3 class="project-title">Decentralized Voting</h3>
                     <p class="project-description">Ethereum Smart Contract Voting System</p>
                     <div class="project-links">
@@ -106,28 +165,32 @@
 
             <div class="project-card">
                 <div class="project-image-wrapper">
+                    <!-- Updated image URL -->
                     <div class="project-image" style="background-image: url('images/project-tic-tac-toe.png');"></div>
                 </div>
                 <div class="project-info">
+                    <span class="project-type">Web Game</span>
                     <h3 class="project-title">Tic Tac Toe</h3>
-                    <p class="project-description">Interactive Web-Based Game</p>
+                    <p class="project-description">Interactive game with a challenging AI opponent and responsive design.</p>
                     <div class="project-links">
-                        <a href="https://ashuuarya.github.io/PRODIGY_WD_03/" target="https://ashuuarya.github.io/PRODIGY_WD_03/">View Live</a>
-                        <a href="https://github.com/ashuuarya/PRODIGY_WD_03" target="https://github.com/ashuuarya/PRODIGY_WD_0">View Code</a>
+                        <a href="https://ashuuarya.github.io/PRODIGY_WD_03/" target="_blank">View Live</a>
+                        <a href="https://github.com/ashuuarya/PRODIGY_WD_03" target="_blank">View Code</a>
                     </div>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-image-wrapper">
+                    <!-- Updated image URL -->
                     <div class="project-image" style="background-image: url('images/project-stopwatch.png');"></div>
                 </div>
                 <div class="project-info">
+                    <span class="project-type">Utility App</span>
                     <h3 class="project-title">Stopwatch App</h3>
-                    <p class="project-description">Minimalist JavaScript Web Application</p>
+                    <p class="project-description">Minimalist JavaScript web app with precise lap functionality.</p>
                     <div class="project-links">
-                        <a href="https://ashuuarya.github.io/PRODIGY_WD_02/" target="https://ashuuarya.github.io/PRODIGY_WD_02/">View Live</a>
-                        <a href="https://github.com/ashuuarya/PRODIGY_WD_02" target="https://github.com/ashuuarya/PRODIGY_WD_02">View Code</a>
+                        <a href="https://ashuuarya.github.io/PRODIGY_WD_02/" target="_blank">View Live</a>
+                        <a href="https://github.com/ashuuarya/PRODIGY_WD_02" target="_blank">View Code</a>
                     </div>
                 </div>
             </div>
@@ -136,9 +199,9 @@
     </section>
 
     <section class="contact" id="contact">
-        <h2 class="section-title">Have a project in mind?</h2>
-        <p class="contact-subtitle">I'm currently available for freelance opportunities and collaborations.</p>
-        <a href="mailto:ashutosh.22b0131047@abes.ac.in" class="contact-email">Let's Talk.</a>
+        <h2 class="section-title">Ready to build something extraordinary?</h2>
+        <p class="contact-subtitle">I'm currently available for freelance opportunities and collaborations. Let's connect and turn your ideas into reality.</p>
+        <a href="mailto:ashutosharya1403@gmail.com" class="contact-email" data-magnetic>Let's Talk.</a>
     </section>
 
 </main>
@@ -149,20 +212,18 @@
             <p>&copy; 2025 Ashutosh Arya. All rights reserved.</p>
         </div>
         <div class="footer-right">
-            <a href="https://github.com/ashuuarya" target="_blank" aria-label="GitHub">GitHub</a>
-            <a href="https://www.linkedin.com/in/ashuuarya" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://github.com/ashuuarya" target="_blank" aria-label="GitHub" data-magnetic>GitHub</a>
+            <a href="https://www.linkedin.com/in/ashuuarya" target="_blank" aria-label="LinkedIn" data-magnetic>LinkedIn</a>
         </div>
     </div>
 </footer>
 
-<a href="#home" class="scroll-to-top" aria-label="Scroll to top">
+<a href="#home" class="scroll-to-top" aria-label="Scroll to top" data-magnetic>
     <i class="fas fa-arrow-up"></i>
 </a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
-
 <script src="js/script.js"></script>
 
 </body>
